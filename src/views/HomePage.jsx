@@ -1,0 +1,327 @@
+import { LiaBrushSolid } from "react-icons/lia";
+import { LuPaintbrush, LuPaintbrush2 } from "react-icons/lu";
+import { RiPaintBrushFill } from "react-icons/ri";
+import { GiSpray,GiDrippingKnife, GiPaintBucket, GiPencilBrush, GiTheaterCurtains } from "react-icons/gi";
+import { SiCanvas } from "react-icons/si";
+import { FaCheck } from "react-icons/fa";
+import { MdCancel } from "react-icons/md";
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+
+const HomePage=()=>{
+    const [floatUp,setFloatUp] = useState(1)
+    const [floatUpThird,setFloatUpThird] = useState(1)
+    const [floatUpFourth,setFloatUpFourth] = useState(1)
+    const [floatUpFifth,setFloatUpFifth] = useState(1)
+    const [index, setIndex] = useState(0)
+
+    useEffect(() => {
+        const handleFloating = () => {
+            setIndex(600)
+          const scrollTop = window.scrollY;
+          const maxScroll = index;
+          const newFloatUp = Math.max(1 - scrollTop / maxScroll, 0.6);
+          setFloatUp(newFloatUp);
+        };
+    
+        window.addEventListener("scroll", handleFloating);
+    
+        return () => {
+          window.removeEventListener("scroll", handleFloating);
+        };
+      }, []);
+
+    //   for third part
+    useEffect(() => {
+        const handleFloatingThird = () => {
+            setIndex(950)
+          const scrollTop = window.scrollY;
+          const maxScroll = index;
+          const newFloatUp = Math.max(1 - scrollTop / maxScroll, 0.6);
+          setFloatUpThird(newFloatUp);
+        };
+    
+        window.addEventListener("scroll", handleFloatingThird);
+    
+        return () => {
+          window.removeEventListener("scroll", handleFloatingThird);
+        };
+      }, []);
+
+     //   for fourth part
+     useEffect(() => {
+        const handleFloatingFourth = () => {
+            setIndex(1100)
+          const scrollTop = window.scrollY;
+          const maxScroll = index;
+          const newFloatUp = Math.max(1 - scrollTop / maxScroll, 0.6);
+          setFloatUpFourth(newFloatUp);
+        };
+    
+        window.addEventListener("scroll", handleFloatingFourth);
+    
+        return () => {
+          window.removeEventListener("scroll", handleFloatingFourth);
+        };
+      }, []);
+
+    //   for fifth part
+    useEffect(() => {
+        const handleFloatingFifth = () => {
+            setIndex(600)
+          const scrollTop = window.scrollY;
+          const maxScroll = index;
+          const newFloatUp = Math.max(1 - scrollTop / maxScroll, 0.6);
+          setFloatUpFifth(newFloatUp);
+        };
+    
+        window.addEventListener("scroll", handleFloatingFifth);
+    
+        return () => {
+          window.removeEventListener("scroll", handleFloatingFifth);
+        };
+      }, []);
+    return(
+        <>
+            <main className="mainPage">
+                {/*introductory part  */}
+                <section className="introductory">
+                    <div className="introContainer">
+                        <h2>
+                        <span style={{color:'rgb(89, 138, 138)'}}>Painting</span><br/> Where Colors Dance <br/><span style={{color:'rgb(89, 138, 138)'}}>and Walls Sing</span>
+                        </h2>
+                        <p>Where colors breathe life onto canvas, whispering stories of beauty and passion with every brushstroke.</p></div>
+                </section>
+
+                {/* second part */}
+                <section className="secondPart">
+                    <div className="chooseUs">
+                        <h2 className={` ${floatUp<=0.6?'increase':''}`}>W<span style={{borderBottom:'1px solid darkslategray'}}>hy Choose Us <LiaBrushSolid className="brush"/> 
+                        </span></h2>
+                        <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p>
+                    </div>
+
+                    <div className="gridchooseUs">
+                        {/* small container 1 */}
+                            
+                            <div className={`smallcontainer1 ${floatUp<=0.6?'up':''}`}>
+                                <LuPaintbrush className="icons"/>
+                                <h2>Window Washing</h2>
+                                <p>Li lingues differe solmen in grammatica <br/>pronunciation commun vocabules.</p>
+                            </div>
+
+                         {/* small container 2 */}
+                            <div className={`smallcontainer2 ${floatUp<=0.6?'up1':''}`}>
+                                <GiSpray className="icons"/>
+                                <h2>Color Proof</h2>
+                                <p>Li lingues differe solmen in grammatica pronunciation commun vocabules.</p>
+                            </div>
+
+                         {/* small container 3 */}
+                            <div className={`smallcontainer3 ${floatUp<=0.6?'up2':''}`}>
+                                <GiDrippingKnife className="icons"/>
+                                <h2>Mildew Removal</h2>
+                                <p>Li lingues differe solmen in grammatica pronunciation commun vocabules.</p>
+                            </div>
+
+                        {/* small container 4 */}
+                            <div className={`smallcontainer4 ${floatUp<=0.6?'up3':''}`}>
+                                <RiPaintBrushFill className="icons"/>
+                                <h2>Faux Finishes</h2>
+                                <p>Li lingues differe solmen in grammatica pronunciation commun vocabules.</p>
+                            </div>
+
+                        {/* small container 5 */}
+                            <div className={`smallcontainer5 ${floatUp<=0.6?'up4':''}`}>
+                                <GiPaintBucket className="icons"/>
+                                <h2>Water Proofing</h2>
+                                <p>Li lingues differe solmen in grammatica pronunciation commun vocabules.</p>
+                            </div>
+
+                        {/* small container 6 */}
+                            <div className={`smallcontainer6 ${floatUp<=0.6?'up5':''}`}>
+                            <SiCanvas className="icons"/>
+                                <h2>Pre-Point Demo</h2>
+                                <p>Li lingues differe solmen in grammatica pronunciation commun vocabules.</p>
+                            </div>
+                        </div>
+                </section>
+
+                {/* third part */}
+                <section className="thirdPart">
+                    <div className="paintService">
+                        <h2 className={`${floatUpThird<=0.6?'h2Third':''}`}>Our Pain<span style={{borderBottom:'1px solid darkslategray'}}>ting Services <LiaBrushSolid className="brush"/> </span></h2>
+                        <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p></div>
+                    
+                    <div className="paintServiceGird">
+                        {/* first part */}
+                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart':''}`}>
+                            <div className="btnMsg">
+                                <LuPaintbrush2 style={{transform:'rotate(50deg)'}} className="icon"/>
+                            </div>
+                            <div className="secondPaintContainer">
+                                <h2>Regular Painting</h2>
+                                <p>Li lingues differe solmen in grammatica <br/>pronunciation commun vocabules.</p>
+                            </div>
+                        </div>
+
+                        {/* second part */}
+                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart1':''}`}>
+                            <div className="btnMsg">
+                                <GiPencilBrush/>
+                            </div>
+                            <div className="secondPaintContainer">
+                                <h2>Residential Interior</h2>
+                                <p>Li lingues differe solmen in grammatica<br/> pronunciation commun vocabules.</p>
+                            </div>
+                        </div>
+
+                        {/* third part */}
+                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart2':''}`}>
+                            <div className="btnMsg">
+                                <GiSpray/>
+                            </div>
+                            <div className="secondPaintContainer">
+                                <h2>Regular Eco Xpress Painting</h2>
+                                <p>Li lingues differe solmen in grammatica<br/> pronunciation commun vocabules.</p>
+                            </div>
+                        </div>
+
+                        {/* fourth part */}
+                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart3':''}`}>
+                        <div className="btnMsg">
+                                <SiCanvas/>
+                            </div>
+                            <div className="secondPaintContainer">
+                                <h2>Water Proof Solution</h2>
+                                <p>Li lingues differe solmen in grammatica<br/> pronunciation commun vocabules.</p>
+                            </div>
+                        </div>
+
+                        {/* fifth part */}
+                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart4':''}`}>
+                            <div className="btnMsg">
+                                <GiPaintBucket/>
+                            </div>
+                            <div className="secondPaintContainer">
+                                <h2>Water Solutions</h2>
+                                <p>Li lingues differe solmen in grammatica<br/> pronunciation commun vocabules.</p>
+                            </div>
+                        </div>
+
+                        {/* sixth part */}
+                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart5':''}`}>
+                            <div className="btnMsg">
+                                <GiTheaterCurtains/>
+                            </div>
+                            <div className="secondPaintContainer">
+                                <h2>House Painting</h2>
+                                <p>Li lingues differe solmen in grammatica<br/> pronunciation commun vocabules.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+
+                {/* fourth part */}
+                <section className="fourthPart">
+                <div className="TeamService">
+                        <h2 style={{borderBottom:'1px solid darkslategray'}}className={`${floatUpFourth<=0.6?'h2Fourth':''}`}>Our Team <LiaBrushSolid className="brush"/></h2>
+                        <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p></div>
+                <div className="teamMembers">
+
+                    {/* Teammate 1 */}
+                    <div className={`teammate ${floatUpFourth<=0.6?'up':''}`}>
+                        <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Paulene Andrew" />
+                        <h4>Paulene Andrew</h4>
+                        <h6>Water Color Painter</h6>
+                    </div>
+
+                    {/* Teammate 2 */}
+                    <div className={`teammate ${floatUpFourth<=0.6?'up1':''}`}>
+                        <img src="../src/assets/luigi-estuye-lucreative-5wKvYUcWPYQ-unsplash.jpg" alt="Paul Isreal" />
+                        <h4>Paul Isreal</h4>
+                        <h6>House Painter</h6>
+                    </div>
+
+                    {/* Teammate 3 */}
+                    <div className={`teammate ${floatUpFourth<=0.6?'up2':''}`}>
+                        <img src="../src/assets/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Robert Micheal" />
+                        <h4>Robert Micheal</h4>
+                        <h6>Wood Painter</h6>
+                    </div>
+
+                    {/* Teammate 4 */}
+                    <div className={`teammate ${floatUpFourth<=0.6?'up3':''}`}>
+                        <img src="../src/assets/johan-mouchet-qDLdKMBmC6o-unsplash.jpg" alt="Oliver Josh" />
+                        <h4>Oliver Josh</h4>
+                        <h6>Color Painter</h6>
+                    </div>
+                </div>
+                </section>
+
+                {/* Fifth part */}
+                <section className="fifthPart">
+                <div className="priceService">
+                        <h2 style={{borderBottom:'1px solid darkslategray'}}className={`${floatUpFifth<=0.6?'h2Fifth':''}`}>Our Price <LiaBrushSolid className="brush"/></h2>
+                        <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p></div>
+                        
+                        <div className="fifthFlex">
+
+                            {/* single visit */}
+                            <div className="singleVisit">
+                                <div className="singleVisit1">
+                                <h2>SINGLE VISIT</h2>
+                                <button>$45<br/>/Month</button>
+                                </div>
+                                <div className="singleVisit2">
+                                    <p><FaCheck/> 2 Workers</p>
+                                    <p><FaCheck/> 15 Days</p>
+                                    <p><FaCheck/> Extra Feature</p>
+                                    <p><MdCancel/> On Demand</p>
+                                    <p>Extra Charges are based on Extra Work taken.</p>
+                                    <button>Buy Service</button>
+                                </div>
+
+                            </div>
+
+                            {/* On demand */}
+                            <div className="demand">
+                                <div className="demand1">
+                                <h2>ON DEMAND</h2>
+                                <button>$125<br/>/Month</button>
+                                </div>
+                                <div className="demand2">
+                                    <p><FaCheck/> 5 Workers</p>
+                                    <p><FaCheck/> 5 Days</p>
+                                    <p><FaCheck/> Extra Feature</p>
+                                    <p><FaCheck/> On Demand</p>
+                                    <p>Extra Charges are based on Extra Work taken.</p>
+                                    <button>Buy Service</button>
+                                </div>
+
+                            </div>
+
+                            {/* maintain */}
+                            <div className="maintain">
+                                <div className="maintain1">
+                                <h2>MAINTENANCE</h2>
+                                <button>$130<br/>/Month</button>
+                                </div>
+                                <div className="maintain2">
+                                    <p><FaCheck/> 3 Workers</p>
+                                    <p><MdCancel/> 15 Days</p>
+                                    <p><FaCheck/> Extra Feature</p>
+                                    <p><FaCheck/> On Demand</p>
+                                    <p>Extra Charges are based on Extra Work taken.</p>
+                                    <button>Buy Service</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        </section>
+            </main>
+        </>
+    )
+}
+export default HomePage
