@@ -6,20 +6,17 @@ import { SiCanvas } from "react-icons/si";
 import { FaCheck } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const HomePage=()=>{
     const [floatUp,setFloatUp] = useState(1)
-    const [floatUpThird,setFloatUpThird] = useState(1)
-    const [floatUpFourth,setFloatUpFourth] = useState(1)
-    const [floatUpFifth,setFloatUpFifth] = useState(1)
-    const [index, setIndex] = useState(0)
+  
+    const indexRef = useRef()
 
     useEffect(() => {
         const handleFloating = () => {
-            setIndex(600)
           const scrollTop = window.scrollY;
-          const maxScroll = index;
+          const maxScroll = indexRef.current;
           const newFloatUp = Math.max(1 - scrollTop / maxScroll, 0.6);
           setFloatUp(newFloatUp);
         };
@@ -31,56 +28,28 @@ const HomePage=()=>{
         };
       }, []);
 
-    //   for third part
-    useEffect(() => {
-        const handleFloatingThird = () => {
-            setIndex(950)
-          const scrollTop = window.scrollY;
-          const maxScroll = index;
-          const newFloatUp = Math.max(1 - scrollTop / maxScroll, 0.6);
-          setFloatUpThird(newFloatUp);
-        };
-    
-        window.addEventListener("scroll", handleFloatingThird);
-    
-        return () => {
-          window.removeEventListener("scroll", handleFloatingThird);
-        };
-      }, []);
+        const sections = [{index:600,setState:setFloatUp},
+            {index:800,setState:setFloatUp},
+            {index:950, setState:setFloatUp},
+            {index:1100,setState:setFloatUp},
+            {index:1300,setState:setFloatUp},
+            {index:1500,setState:setFloatUp},
+            {index:1700,setState:setFloatUp},
+            {index:1900,setState:setFloatUp}
+        ]
 
-     //   for fourth part
-     useEffect(() => {
-        const handleFloatingFourth = () => {
-            setIndex(1100)
-          const scrollTop = window.scrollY;
-          const maxScroll = index;
-          const newFloatUp = Math.max(1 - scrollTop / maxScroll, 0.6);
-          setFloatUpFourth(newFloatUp);
-        };
-    
-        window.addEventListener("scroll", handleFloatingFourth);
-    
-        return () => {
-          window.removeEventListener("scroll", handleFloatingFourth);
-        };
-      }, []);
-
-    //   for fifth part
-    useEffect(() => {
-        const handleFloatingFifth = () => {
-            setIndex(600)
-          const scrollTop = window.scrollY;
-          const maxScroll = index;
-          const newFloatUp = Math.max(1 - scrollTop / maxScroll, 0.6);
-          setFloatUpFifth(newFloatUp);
-        };
-    
-        window.addEventListener("scroll", handleFloatingFifth);
-    
-        return () => {
-          window.removeEventListener("scroll", handleFloatingFifth);
-        };
-      }, []);
+        useEffect(() => {
+            const handleSectionScrollUp = () => {
+              const scrollTop = window.scrollY;
+              sections.forEach(section => {
+                if (scrollTop >= section.index) {
+                  section.setState(Math.max(1 - scrollTop / section.index, 0.6));
+                }
+              });
+            };
+        
+            window.addEventListener("scroll", handleSectionScrollUp);})
+        
     return(
         <>
             <main className="mainPage">
@@ -150,12 +119,12 @@ const HomePage=()=>{
                 {/* third part */}
                 <section className="thirdPart">
                     <div className="paintService">
-                        <h2 className={`${floatUpThird<=0.6?'h2Third':''}`}>Our Pain<span style={{borderBottom:'1px solid darkslategray'}}>ting Services <LiaBrushSolid className="brush"/> </span></h2>
+                        <h2 className={`${floatUp<=0.6?'h2Third':''}`}>Our Pain<span style={{borderBottom:'1px solid darkslategray'}}>ting Services <LiaBrushSolid className="brush"/> </span></h2>
                         <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p></div>
                     
                     <div className="paintServiceGird">
                         {/* first part */}
-                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart':''}`}>
+                        <div className={`paintContainer1 ${floatUp<=0.6?'sidePart':''}`}>
                             <div className="btnMsg">
                                 <LuPaintbrush2 style={{transform:'rotate(50deg)'}} className="icon"/>
                             </div>
@@ -166,7 +135,7 @@ const HomePage=()=>{
                         </div>
 
                         {/* second part */}
-                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart1':''}`}>
+                        <div className={`paintContainer1 ${floatUp<=0.6?'sidePart1':''}`}>
                             <div className="btnMsg">
                                 <GiPencilBrush/>
                             </div>
@@ -177,7 +146,7 @@ const HomePage=()=>{
                         </div>
 
                         {/* third part */}
-                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart2':''}`}>
+                        <div className={`paintContainer1 ${floatUp<=0.6?'sidePart2':''}`}>
                             <div className="btnMsg">
                                 <GiSpray/>
                             </div>
@@ -188,7 +157,7 @@ const HomePage=()=>{
                         </div>
 
                         {/* fourth part */}
-                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart3':''}`}>
+                        <div className={`paintContainer1 ${floatUp<=0.6?'sidePart3':''}`}>
                         <div className="btnMsg">
                                 <SiCanvas/>
                             </div>
@@ -199,7 +168,7 @@ const HomePage=()=>{
                         </div>
 
                         {/* fifth part */}
-                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart4':''}`}>
+                        <div className={`paintContainer1 ${floatUp<=0.6?'sidePart4':''}`}>
                             <div className="btnMsg">
                                 <GiPaintBucket/>
                             </div>
@@ -210,7 +179,7 @@ const HomePage=()=>{
                         </div>
 
                         {/* sixth part */}
-                        <div className={`paintContainer1 ${floatUpThird<=0.6?'sidePart5':''}`}>
+                        <div className={`paintContainer1 ${floatUp<=0.6?'sidePart5':''}`}>
                             <div className="btnMsg">
                                 <GiTheaterCurtains/>
                             </div>
@@ -226,33 +195,33 @@ const HomePage=()=>{
                 {/* fourth part */}
                 <section className="fourthPart">
                 <div className="TeamService">
-                        <h2 style={{borderBottom:'1px solid darkslategray'}}className={`${floatUpFourth<=0.6?'h2Fourth':''}`}>Our Team <LiaBrushSolid className="brush"/></h2>
+                        <h2 style={{borderBottom:'1px solid darkslategray'}}className={`${floatUp<=0.6?'h2Fourth':''}`}>Our Team <LiaBrushSolid className="brush"/></h2>
                         <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p></div>
                 <div className="teamMembers">
 
                     {/* Teammate 1 */}
-                    <div className={`teammate ${floatUpFourth<=0.6?'up':''}`}>
+                    <div className={`teammate ${floatUp<=0.6?'up':''}`}>
                         <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Paulene Andrew" />
                         <h4>Paulene Andrew</h4>
                         <h6>Water Color Painter</h6>
                     </div>
 
                     {/* Teammate 2 */}
-                    <div className={`teammate ${floatUpFourth<=0.6?'up1':''}`}>
+                    <div className={`teammate ${floatUp<=0.6?'up1':''}`}>
                         <img src="../src/assets/luigi-estuye-lucreative-5wKvYUcWPYQ-unsplash.jpg" alt="Paul Isreal" />
                         <h4>Paul Isreal</h4>
                         <h6>House Painter</h6>
                     </div>
 
                     {/* Teammate 3 */}
-                    <div className={`teammate ${floatUpFourth<=0.6?'up2':''}`}>
+                    <div className={`teammate ${floatUp<=0.6?'up2':''}`}>
                         <img src="../src/assets/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Robert Micheal" />
                         <h4>Robert Micheal</h4>
                         <h6>Wood Painter</h6>
                     </div>
 
                     {/* Teammate 4 */}
-                    <div className={`teammate ${floatUpFourth<=0.6?'up3':''}`}>
+                    <div className={`teammate ${floatUp<=0.6?'up3':''}`}>
                         <img src="../src/assets/johan-mouchet-qDLdKMBmC6o-unsplash.jpg" alt="Oliver Josh" />
                         <h4>Oliver Josh</h4>
                         <h6>Color Painter</h6>
@@ -263,63 +232,65 @@ const HomePage=()=>{
                 {/* Fifth part */}
                 <section className="fifthPart">
                 <div className="priceService">
-                        <h2 style={{borderBottom:'1px solid darkslategray'}}className={`${floatUpFifth<=0.6?'h2Fifth':''}`}>Our Price <LiaBrushSolid className="brush"/></h2>
+                        <h2 style={{borderBottom:'1px solid darkslategray'}}className={`${floatUp<=0.6?'h2Fifth':''}`}>Our Price <LiaBrushSolid className="brush"/></h2>
                         <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p></div>
                         
                         <div className="fifthFlex">
 
                             {/* single visit */}
-                            <div className="singleVisit">
+                            <div className={`singleVisit ${floatUp<=0.6?'sideleft':''}`}>
                                 <div className="singleVisit1">
                                 <h2>SINGLE VISIT</h2>
-                                <button>$45<br/>/Month</button>
+                                <button>$45<br/><span className="it">/Month</span></button>
                                 </div>
                                 <div className="singleVisit2">
-                                    <p><FaCheck/> 2 Workers</p>
-                                    <p><FaCheck/> 15 Days</p>
-                                    <p><FaCheck/> Extra Feature</p>
-                                    <p><MdCancel/> On Demand</p>
-                                    <p>Extra Charges are based on Extra Work taken.</p>
+                                    <p><FaCheck style={{color:'darkslategray'}}/>  2 Workers</p>
+                                    <p><FaCheck style={{color:'darkslategray'}}/>  15 Days</p>
+                                    <p><FaCheck style={{color:'darkslategray'}}/> Extra Feature</p>
+                                    <p><MdCancel style={{color:'darkred'}}/> On Demand</p>
+                                    <p style={{width: '20rem', fontSize:'1.1rem', color:'gray'}}>Extra Charges are based on Extra Work taken.</p>
                                     <button>Buy Service</button>
                                 </div>
 
                             </div>
 
                             {/* On demand */}
-                            <div className="demand">
+                            <div className={`demand ${floatUp<=0.6?'sideright':''}`}>
                                 <div className="demand1">
                                 <h2>ON DEMAND</h2>
-                                <button>$125<br/>/Month</button>
+                                <button>$125<br/><span className="it">/Month</span></button>
                                 </div>
                                 <div className="demand2">
-                                    <p><FaCheck/> 5 Workers</p>
-                                    <p><FaCheck/> 5 Days</p>
-                                    <p><FaCheck/> Extra Feature</p>
-                                    <p><FaCheck/> On Demand</p>
-                                    <p>Extra Charges are based on Extra Work taken.</p>
+                                    <p><FaCheck style={{color:'darkslategray'}}/> 5 Workers</p>
+                                    <p><FaCheck style={{color:'darkslategray'}}/> 5 Days</p>
+                                    <p><FaCheck style={{color:'darkslategray'}}/> Extra Feature</p>
+                                    <p><FaCheck style={{color:'darkslategray'}}/> On Demand</p>
+                                    <p style={{width: '20rem', fontSize:'1.1rem', color:'gray'}}>Extra Charges are based on Extra Work taken.</p>
                                     <button>Buy Service</button>
                                 </div>
 
                             </div>
 
                             {/* maintain */}
-                            <div className="maintain">
+                            <div className={`maintain ${floatUp<=0.6?'up5':''}`}>
                                 <div className="maintain1">
                                 <h2>MAINTENANCE</h2>
-                                <button>$130<br/>/Month</button>
+                                <button>$130<br/><span className="it">/Month</span></button>
                                 </div>
                                 <div className="maintain2">
-                                    <p><FaCheck/> 3 Workers</p>
-                                    <p><MdCancel/> 15 Days</p>
-                                    <p><FaCheck/> Extra Feature</p>
-                                    <p><FaCheck/> On Demand</p>
-                                    <p>Extra Charges are based on Extra Work taken.</p>
+                                    <p><FaCheck style={{color:'darkslategray'}}/>  3 Workers</p>
+                                    <p><MdCancel style={{color:'darkred'}}/> 15 Days</p>
+                                    <p><FaCheck style={{color:'darkslategray'}}/>  Extra Feature</p>
+                                    <p><FaCheck style={{color:'darkslategray'}}/>  On Demand</p>
+                                    <p style={{width: '20rem', fontSize:'1.1rem', color:'gray'}}>Extra Charges are based on Extra Work taken.</p>
                                     <button>Buy Service</button>
                                 </div>
 
                             </div>
                         </div>
                         </section>
+
+                
             </main>
         </>
     )
