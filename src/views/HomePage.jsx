@@ -5,7 +5,7 @@ import { GiSpray,GiDrippingKnife, GiPaintBucket, GiPencilBrush, GiTheaterCurtain
 import { SiCanvas } from "react-icons/si";
 import { FaCheck } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from "react";
 
 const HomePage=()=>{
@@ -290,6 +290,96 @@ const HomePage=()=>{
                         </div>
                         </section>
 
+                {/* Sixth part */}
+                <section className="sixthPart">
+                <div className="testService">
+                        <h2 style={{borderBottom:'1px solid darkslategray'}}className={`${floatUp<=0.6?'h2Six':''}`}>Our Testimonial <LiaBrushSolid className="brush"/></h2>
+                        <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p></div>
+                    
+                    <div className="testSlidesContainer">
+                        {/* test slide 1 */}
+                        <div className="testSlide1">
+                            <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Racheal's Profile Picture" />
+                            <div className="comment">
+                                <h3>Racheal Paul</h3>
+                                <h4>CEO</h4>
+                                <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p>
+                            </div>
+                        </div>
+                        {/* test slide 2 */}
+                        <div className="testSlide2">
+                            <img src="../src/assets/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Alex Profile Picture" />
+                            <div className="comment">
+                                <h3>Alex Mucheal</h3>
+                                <h4>HR Manager</h4>
+                                <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Seventh part */}
+                <section className="seventhPart">
+                    <div className="projectService">
+                        <h2 style={{borderBottom:'1px solid darkslategray'}}className={`${floatUp<=0.6?'h2Seven':''}`}>Our Painting Project <LiaBrushSolid className="brush"/></h2>
+                        <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p></div>
+
+                        <div className="projectShowcase">
+                            <div className="project1">
+                                <p><img src="../src/assets/luigi-estuye-lucreative-5wKvYUcWPYQ-unsplash.jpg" alt="placeholder" className="special-img"/></p>
+                                <p><img src="../src/assets/luigi-estuye-lucreative-5wKvYUcWPYQ-unsplash.jpg" alt="placeholder" /></p>
+                            </div>
+
+                            <div className="project2">
+                                <p><img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="placeholder" /></p>
+                                <p><img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="placeholder" /></p>
+                                <p><img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="placeholder" /></p>
+                            </div>
+
+                            <div className="project1">
+                                <p><img src="../src/assets/johan-mouchet-qDLdKMBmC6o-unsplash.jpg" alt="placeholder" /></p>
+                                <p><img src="../src/assets/johan-mouchet-qDLdKMBmC6o-unsplash.jpg" alt="placeholder" className="special-img"/></p>
+                            </div>
+                        </div>
+                </section>
+
+                {/* Eight part */}
+                <section className="eightPart">
+                    <div className="blogService">
+                        <h2 style={{borderBottom:'1px solid darkslategray'}}className={`${floatUp<=0.6?'h2Eight':''}`}>Our Blog <LiaBrushSolid className="brush"/></h2>
+                        <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p></div>
+
+                        <div className="blogSlidesContainer">
+                        {/* test slide 1 */}
+                        <div className="blogSlide1">
+                            <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Racheal's Profile Picture" />
+                            <div className="comment">
+                                <h4>May 14, 2024</h4>
+                                <h2>A Beautiful Daycare</h2>
+                                <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p>
+                            </div>
+                        </div>
+                        {/* test slide 2 */}
+                        <div className="blogSlide2">
+                            <img src="../src/assets/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Alex Profile Picture" />
+                            <div className="comment">
+                                <h4>May 14, 2024</h4>
+                                <h2>A Beautiful Daycare</h2>
+                                <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p>
+                            </div>
+                        </div>
+
+                        {/* test slide 3 */}
+                        <div className="blogSlide3">
+                            <img src="../src/assets/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Alex Profile Picture" />
+                            <div className="comment">
+                                <h4>May 14, 2024</h4>
+                                <h2>A Beautiful Daycare</h2>
+                                <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 
             </main>
         </>
