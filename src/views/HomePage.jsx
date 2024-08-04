@@ -5,12 +5,14 @@ import { GiSpray,GiDrippingKnife, GiPaintBucket, GiPencilBrush, GiTheaterCurtain
 import { SiCanvas } from "react-icons/si";
 import { FaCheck } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
-// import { Link } from 'react-router-dom';
+import { TiSocialFacebookCircular,TiSocialLinkedin,TiSocialGooglePlusCircular,TiSocialTwitter } from "react-icons/ti";
+import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const HomePage=()=>{
     const [floatUp,setFloatUp] = useState(1)
-  
+
     const indexRef = useRef()
 
     useEffect(() => {
@@ -49,7 +51,18 @@ const HomePage=()=>{
             };
         
             window.addEventListener("scroll", handleSectionScrollUp);})
-        
+
+            const [pictureTracker, setPictureTracker] = useState(0);
+
+            useEffect(() => {
+                const interval = setInterval(() => {
+                    setPictureTracker(prevTracker => prevTracker + 1);
+                }, 1000);
+            
+                return () => clearInterval(interval);
+            }, []); 
+            
+            const is992 = useMediaQuery({query:'(max-width:992px)'})
     return(
         <>
             <main className="mainPage">
@@ -57,7 +70,7 @@ const HomePage=()=>{
                 <section className="introductory">
                     <div className="introContainer">
                         <h2>
-                        <span style={{color:'rgb(89, 138, 138)'}}>Painting</span><br/> Where Colors Dance <br/><span style={{color:'rgb(89, 138, 138)'}}>and Walls Sing</span>
+                        <span style={{color:'rgb(89, 138, 138)'}}>Painting,</span><br/> Where Colors Dance <br/><span style={{color:'rgb(89, 138, 138)'}}>and Walls Sing</span>
                         </h2>
                         <p>Where colors breathe life onto canvas, whispering stories of beauty and passion with every brushstroke.</p></div>
                 </section>
@@ -200,31 +213,64 @@ const HomePage=()=>{
                 <div className="teamMembers">
 
                     {/* Teammate 1 */}
-                    <div className={`teammate ${floatUp<=0.6?'up':''}`}>
+                    <div className={`teammate teammate1 ${floatUp<=0.6?'up':''}`}>
                         <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Paulene Andrew" />
                         <h4>Paulene Andrew</h4>
                         <h6>Water Color Painter</h6>
+
+                        <div className="floatSocials">
+                           <button> <Link to='/' className="linkStyle"><TiSocialFacebookCircular/></Link>
+                            </button>
+                            <button><Link to='/' className="linkStyle"><TiSocialLinkedin/></Link></button>
+                            <button><Link to='/' className="linkStyle"><TiSocialTwitter/></Link></button>
+                            <button><Link to='/' className="linkStyle"><TiSocialGooglePlusCircular/></Link></button>
+                        </div>
                     </div>
 
                     {/* Teammate 2 */}
-                    <div className={`teammate ${floatUp<=0.6?'up1':''}`}>
+                    <div className={`teammate  teammate2 ${floatUp<=0.6?'up1':''}`}>
                         <img src="../src/assets/luigi-estuye-lucreative-5wKvYUcWPYQ-unsplash.jpg" alt="Paul Isreal" />
                         <h4>Paul Isreal</h4>
                         <h6>House Painter</h6>
-                    </div>
 
+                        <div className="floatSocials">
+                           <button> <Link to='/' className="linkStyle"><TiSocialFacebookCircular/></Link>
+                            </button>
+                            <button><Link to='/' className="linkStyle"><TiSocialLinkedin/></Link></button>
+                            <button><Link to='/' className="linkStyle"><TiSocialTwitter/></Link></button>
+                            <button><Link to='/' className="linkStyle"><TiSocialGooglePlusCircular/></Link></button>
+                        </div>
+                    </div>
+                    
+                    
                     {/* Teammate 3 */}
-                    <div className={`teammate ${floatUp<=0.6?'up2':''}`}>
+                    <div className={`teammate teammate3 ${floatUp<=0.6?'up2':''}`}>
                         <img src="../src/assets/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Robert Micheal" />
                         <h4>Robert Micheal</h4>
                         <h6>Wood Painter</h6>
+
+                        <div className="floatSocials">
+                           <button> <Link to='/' className="linkStyle"><TiSocialFacebookCircular/></Link>
+                            </button>
+                            <button><Link to='/' className="linkStyle"><TiSocialLinkedin/></Link></button>
+                            <button><Link to='/' className="linkStyle"><TiSocialTwitter/></Link></button>
+                            <button><Link to='/' className="linkStyle"><TiSocialGooglePlusCircular/></Link></button>
+                        </div>
                     </div>
 
                     {/* Teammate 4 */}
-                    <div className={`teammate ${floatUp<=0.6?'up3':''}`}>
+                    <div className={`teammate teammate4 ${floatUp<=0.6?'up3':''}`}>
                         <img src="../src/assets/johan-mouchet-qDLdKMBmC6o-unsplash.jpg" alt="Oliver Josh" />
                         <h4>Oliver Josh</h4>
                         <h6>Color Painter</h6>
+
+                        <div className="floatSocials">
+                           <button> <Link to='/' className="linkStyle"><TiSocialFacebookCircular/></Link>
+                            </button>
+                            <button><Link to='/' className="linkStyle"><TiSocialLinkedin/></Link></button>
+                            <button><Link to='/' className="linkStyle"><TiSocialTwitter/></Link></button>
+                            <button><Link to='/' className="linkStyle"><TiSocialGooglePlusCircular/></Link></button>
+                        </div>
                     </div>
                 </div>
                 </section>
@@ -248,7 +294,7 @@ const HomePage=()=>{
                                     <p><FaCheck style={{color:'darkslategray'}}/>  15 Days</p>
                                     <p><FaCheck style={{color:'darkslategray'}}/> Extra Feature</p>
                                     <p><MdCancel style={{color:'darkred'}}/> On Demand</p>
-                                    <p style={{width: '20rem', fontSize:'1.1rem', color:'gray'}}>Extra Charges are based on Extra Work taken.</p>
+                                    <p style={{ fontSize:'1.1rem', color:'gray'}}>Extra Charges are based on Extra Work taken.</p>
                                     <button>Buy Service</button>
                                 </div>
 
@@ -265,14 +311,14 @@ const HomePage=()=>{
                                     <p><FaCheck style={{color:'darkslategray'}}/> 5 Days</p>
                                     <p><FaCheck style={{color:'darkslategray'}}/> Extra Feature</p>
                                     <p><FaCheck style={{color:'darkslategray'}}/> On Demand</p>
-                                    <p style={{width: '20rem', fontSize:'1.1rem', color:'gray'}}>Extra Charges are based on Extra Work taken.</p>
+                                    <p style={{fontSize:'1.1rem', color:'gray'}}>Extra Charges are based on Extra Work taken.</p>
                                     <button>Buy Service</button>
                                 </div>
 
                             </div>
 
                             {/* maintain */}
-                            <div className={`maintain ${floatUp<=0.6?'up5':''}`}>
+                            <div className={`maintain ${floatUp<=0.6?'sideright':''}`}>
                                 <div className="maintain1">
                                 <h2>MAINTENANCE</h2>
                                 <button>$130<br/><span className="it">/Month</span></button>
@@ -282,7 +328,7 @@ const HomePage=()=>{
                                     <p><MdCancel style={{color:'darkred'}}/> 15 Days</p>
                                     <p><FaCheck style={{color:'darkslategray'}}/>  Extra Feature</p>
                                     <p><FaCheck style={{color:'darkslategray'}}/>  On Demand</p>
-                                    <p style={{width: '20rem', fontSize:'1.1rem', color:'gray'}}>Extra Charges are based on Extra Work taken.</p>
+                                    <p style={{fontSize:'1.1rem', color:'gray'}}>Extra Charges are based on Extra Work taken.</p>
                                     <button>Buy Service</button>
                                 </div>
 

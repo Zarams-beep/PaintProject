@@ -4,15 +4,19 @@ import { BsEnvelopeAt } from "react-icons/bs";
 import {FaMapMarkerAlt, FaFacebookF, FaTwitter, FaWhatsapp,FaRegCalendarAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useEffect,useState } from 'react';
+import { IoMdMenu } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
+import { useMediaQuery } from "react-responsive";
 const Header=()=>{
     const [isSticky,setSticky] = useState(1)
 
     useEffect(() => {
         const handleScroll = () => {
           const scrollTop = window.scrollY;
-          const maxScroll = 200;
+          const maxScroll = 100;
           const newSticky = Math.max(1 - scrollTop / maxScroll, 0.6);
           setSticky(newSticky);
+          console.log(scrollTop);
         };
     
         window.addEventListener("scroll", handleScroll);
@@ -22,7 +26,12 @@ const Header=()=>{
         };
       }, []);
 
-    
+      const is992 = useMediaQuery({query:'(max-width:992px)'})
+      const [isOpen,setIsopen] = useState(false)
+
+      const isToggle=()=>{
+        setIsopen(prev=>!prev)
+      }
     return(
         <>
             <header className="mainHeader">
@@ -55,7 +64,7 @@ const Header=()=>{
                     <p className='address'>3742 Graystone Lakes, <br/>Macon GA Georgia,GA 307</p>
                 </div>
 
-                <div className="socials">
+                <div className={`socials ${is992?'invisibleSocials':''}`}>
                     <button className="facebook">
                         <a href="/facebook">
                         <FaFacebookF/></a>
@@ -73,7 +82,21 @@ const Header=()=>{
 
             <header className={`secondHeader ${isSticky<=0.6?'sticky':''}`} >
                 <section className="secondSection">
-                    <div className="navigatePages">
+                    {is992?<div className="socials">
+                    <button className="facebook">
+                        <a href="/facebook">
+                        <FaFacebookF/></a>
+                    </button>
+                    <button className="whatsapp">
+                        <a href="/w">
+                        <FaWhatsapp/></a>
+                    </button>
+                    <button className="twitter">
+                        <a href="/x">
+                        <FaTwitter/></a>
+                    </button>
+                </div>:''}
+                    <div className={`navigatePages ${is992?'invisibleNavigate':''}`}>
                     <Link to="/" className='linkHome'>
                         Home
                     </Link>
@@ -94,13 +117,18 @@ const Header=()=>{
                     </Link>
                     </div>
 
-                    <div className="appointContainer">
+                    <div className={`appointContainer ${is992?'invisibleAppoint':''}`}>
                         
                         <button>
                         <FaRegCalendarAlt/>
                         <span>Make An Appointment</span>
                         </button>
                     </div>
+
+                    {is992?<div className='flexAppoint'>
+                        <p><FaRegCalendarAlt/></p>
+                        <p onClick={isToggle}>{isOpen?<RxCross2/>:<IoMdMenu/>}</p>
+                    </div>:''}
                 </section>
             </header>
         </>
