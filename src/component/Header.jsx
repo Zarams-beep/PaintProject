@@ -32,6 +32,9 @@ const Header=()=>{
       const isToggle=()=>{
         setIsopen(prev=>!prev)
       }
+
+      const is580 = useMediaQuery({query:'(max-width:580px)'})
+     
     return(
         <>
             <header className="mainHeader">
@@ -41,7 +44,7 @@ const Header=()=>{
                     <p>Tropical Paints</p>
                 </div>
 
-                <div className="allContacts">
+                <div className={`allContacts ${is580? 'contactInvisile':''}`}>
                 <div className="phoneNumber">
                     <img className='PhoneHeld' src={phone} alt="Phone in Hand" />
                     <div className="divNumbers">
@@ -77,7 +80,9 @@ const Header=()=>{
                         <a href="/x">
                         <FaTwitter/></a>
                     </button>
-                </div></div></section>
+                </div></div>
+                
+                </section>
             </header>
 
             <header className={`secondHeader ${isSticky<=0.6?'sticky':''}`} >
@@ -127,7 +132,7 @@ const Header=()=>{
 
                     {is992?<div className='flexAppoint'>
                         <p><FaRegCalendarAlt/></p>
-                        <p onClick={isToggle}>{isOpen?<RxCross2/>:<IoMdMenu/>}</p>
+                        <p className='flexLeft' onClick={isToggle}>{isOpen?<RxCross2/>:<IoMdMenu/>}</p>
                     </div>:''}
                 </section>
             </header>
