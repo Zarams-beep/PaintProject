@@ -174,7 +174,7 @@ body{
   padding: 0;
 }
 .introductory{
-  background-image: url('../src/assets/kenny-eliason-Wp7t4cWN-68-unsplash.jpg');
+  background-image: url('/kenny-eliason-Wp7t4cWN-68-unsplash.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

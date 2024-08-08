@@ -214,7 +214,7 @@ const HomePage=()=>{
 
                     {/* Teammate 1 */}
                     <div className={`teammate teammate1 ${floatUp<=0.6?'up':''}`}>
-                        <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Paulene Andrew" />
+                        <img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Paulene Andrew" />
                         <h4>Paulene Andrew</h4>
                         <h6>Water Color Painter</h6>
 
@@ -229,7 +229,7 @@ const HomePage=()=>{
 
                     {/* Teammate 2 */}
                     <div className={`teammate  teammate2 ${floatUp<=0.6?'up1':''}`}>
-                        <img src="../src/assets/luigi-estuye-lucreative-5wKvYUcWPYQ-unsplash.jpg" alt="Paul Isreal" />
+                        <img src="/luigi-estuye-lucreative-5wKvYUcWPYQ-unsplash.jpg" alt="Paul Isreal" />
                         <h4>Paul Isreal</h4>
                         <h6>House Painter</h6>
 
@@ -245,7 +245,7 @@ const HomePage=()=>{
                     
                     {/* Teammate 3 */}
                     <div className={`teammate teammate3 ${floatUp<=0.6?'up2':''}`}>
-                        <img src="../src/assets/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Robert Micheal" />
+                        <img src="/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Robert Micheal" />
                         <h4>Robert Micheal</h4>
                         <h6>Wood Painter</h6>
 
@@ -260,7 +260,7 @@ const HomePage=()=>{
 
                     {/* Teammate 4 */}
                     <div className={`teammate teammate4 ${floatUp<=0.6?'up3':''}`}>
-                        <img src="../src/assets/johan-mouchet-qDLdKMBmC6o-unsplash.jpg" alt="Oliver Josh" />
+                        <img src="/johan-mouchet-qDLdKMBmC6o-unsplash.jpg" alt="Oliver Josh" />
                         <h4>Oliver Josh</h4>
                         <h6>Color Painter</h6>
 
@@ -345,7 +345,7 @@ const HomePage=()=>{
                     <div className="testSlidesContainer">
                         {/* test slide 1 */}
                         <div className="testSlide1">
-                            <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Racheal's Profile Picture" />
+                            <img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Racheal's Profile Picture" />
                             <div className="comment">
                                 <h3>Racheal Paul</h3>
                                 <h4>CEO</h4>
@@ -354,7 +354,7 @@ const HomePage=()=>{
                         </div>
                         {/* test slide 2 */}
                         <div className="testSlide2">
-                            <img src="../src/assets/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Alex Profile Picture" />
+                            <img src="/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Alex Profile Picture" />
                             <div className="comment">
                                 <h3>Alex Mucheal</h3>
                                 <h4>HR Manager</h4>
@@ -372,19 +372,19 @@ const HomePage=()=>{
 
                         <div className="projectShowcase">
                             <div className="project1">
-                                <p><img src="../src/assets/luigi-estuye-lucreative-5wKvYUcWPYQ-unsplash.jpg" alt="placeholder" className="special-img"/></p>
-                                <p><img src="../src/assets/luigi-estuye-lucreative-5wKvYUcWPYQ-unsplash.jpg" alt="placeholder" /></p>
+                                <p><img src="/luigi-estuye-lucreative-5wKvYUcWPYQ-unsplash.jpg" alt="placeholder" className="special-img"/></p>
+                                <p><img src="/luigi-estuye-lucreative-5wKvYUcWPYQ-unsplash.jpg" alt="placeholder" /></p>
                             </div>
 
                             <div className="project2">
-                                <p><img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="placeholder" /></p>
-                                <p><img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="placeholder" /></p>
-                                <p><img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="placeholder" /></p>
+                                <p><img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="placeholder" /></p>
+                                <p><img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="placeholder" /></p>
+                                <p><img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="placeholder" /></p>
                             </div>
 
                             <div className="project1">
-                                <p><img src="../src/assets/johan-mouchet-qDLdKMBmC6o-unsplash.jpg" alt="placeholder" /></p>
-                                <p><img src="../src/assets/johan-mouchet-qDLdKMBmC6o-unsplash.jpg" alt="placeholder" className="special-img"/></p>
+                                <p><img src="/johan-mouchet-qDLdKMBmC6o-unsplash.jpg" alt="placeholder" /></p>
+                                <p><img src="/johan-mouchet-qDLdKMBmC6o-unsplash.jpg" alt="placeholder" className="special-img"/></p>
                             </div>
                         </div>
                 </section>
@@ -398,7 +398,7 @@ const HomePage=()=>{
                         <div className="blogSlidesContainer">
                         {/* test slide 1 */}
                         <div className="blogSlide1">
-                            <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Racheal's Profile Picture" />
+                            <img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Racheal's Profile Picture" />
                             <div className="comment">
                                 <h4>May 14, 2024</h4>
                                 <h2>A Beautiful Daycare</h2>
@@ -407,7 +407,7 @@ const HomePage=()=>{
                         </div>
                         {/* test slide 2 */}
                         <div className="blogSlide2">
-                            <img src="../src/assets/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Alex Profile Picture" />
+                            <img src="/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Alex Profile Picture" />
                             <div className="comment">
                                 <h4>May 14, 2024</h4>
                                 <h2>A Beautiful Daycare</h2>
@@ -417,7 +417,7 @@ const HomePage=()=>{
 
                         {/* test slide 3 */}
                         <div className="blogSlide3">
-                            <img src="../src/assets/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Alex Profile Picture" />
+                            <img src="/tim-mossholder-bwbauFRbNyo-unsplash.jpg" alt="Alex Profile Picture" />
                             <div className="comment">
                                 <h4>May 14, 2024</h4>
                                 <h2>A Beautiful Daycare</h2>

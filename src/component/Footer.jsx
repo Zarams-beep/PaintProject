@@ -21,13 +21,13 @@ const Footer=()=>{
                     <h2>Recent Post</h2>
                     <div className="mainrecentPost">
                         <div className="smallGirdPost1">
-                            <p className='img-p'><img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/></p>
+                            <p className='img-p'><img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/></p>
                             <div className="girdNotes">
                             <h3>Omnicos directe</h3>
                             <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar.</p></div>
                         </div>
                         <div className="smallGirdPost2">
-                            <p className='img-p'><img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/></p>
+                            <p className='img-p'><img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/></p>
                             <div className="girdNotes">
                             <h3>Omnicos directe</h3>
                             <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar.</p></div>
@@ -37,12 +37,12 @@ const Footer=()=>{
                 <div className="instagramPost">
                     <h2>Instagram Post</h2>
                     <div className="instagram-gird">
-                    <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/>
-                    <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/>
-                    <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/>
-                    <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/>
-                    <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/>
-                    <img src="../src/assets/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/></div>
+                    <img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/>
+                    <img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/>
+                    <img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/>
+                    <img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/>
+                    <img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/>
+                    <img src="/muhammad-rahim-ali-auNr-4jnx8U-unsplash.jpg" alt="Placeholder"/></div>
                 </div>
 
                 <div className="contactInfo">
