@@ -5,6 +5,7 @@
   box-sizing: border-box;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
+  background-color: white;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -397,7 +398,7 @@ body{
 .paintServiceGird{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-  gap: 20px;
+  gap: 1rem;
   padding-bottom: 8rem;
 }
 
@@ -1114,5 +1115,8 @@ body{
   }
   .introContainer p{
     width: 80%;
+  }
+  .thirdPart{
+    padding-right: 2rem;
   }
 }
