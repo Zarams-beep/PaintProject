@@ -187,7 +187,7 @@ body{
   border: none;
   padding-bottom: 30rem;
 }
-@media only screen and (max-width:1080px){
+@media all and (max-width:1080px){
   .mainHeader{
     margin-right: -1rem;
   }
@@ -227,7 +227,7 @@ body{
   margin-top: -1rem;
   margin-right: 5%;
 }
-@media only screen and (max-width:992px) {
+@media all and (max-width:992px) {
   .secondHeader{
     padding-bottom: 0;
     padding-top: 0;
@@ -492,7 +492,7 @@ body{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media only screen and (max-width:992px) {
+@media all and (max-width:992px) {
   .gridchooseUs{
     grid-template-columns: repeat(2,auto);
   }
@@ -693,7 +693,7 @@ body{
 .fifthFlex .demand:hover{
   transform: scale(1.1);
 }
-@media only screen and (max-width:992px) {
+@media all and (max-width:992px) {
   .fifthFlex{
     grid-template-columns: 1fr;
   }
@@ -880,10 +880,10 @@ body{
     margin-top: .5rem;
     padding-right: 2rem;
   }
-  @media only screen and (max-width:992px) {
+  @media all and (max-width:992px) {
     .blogSlide1 .comment, .blogSlide2 .comment, .blogSlide3 .comment{
       padding-right: 0;
-      margin-left: 4rem;
+      margin-left: 2rem;
     }
     .blogSlidesContainer{
       display: grid;
@@ -916,9 +916,10 @@ body{
     border: none;
     padding-bottom: 2rem;
     display: grid;
-    grid-template-columns: repeat(4,auto);
-    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  justify-content: space-between;
     gap: 2rem;
+    padding-right: 2rem;
   }
 
  footer .painterContainer {
@@ -981,6 +982,7 @@ body{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: .4rem;
+  padding-right: 2rem;
  }
  .instagram-gird img{
   width: 100%;
@@ -998,7 +1000,7 @@ body{
  .contactInfo p{
   font-size: .9rem;
  }
-@media only screen and (max-width:1080px) {
+@media all and (max-width:1080px) {
   .mainPage,.mainHeader,.secondHeader,footer{
     overflow-x: hidden;
     margin-right: -2rem;
@@ -1010,7 +1012,7 @@ body{
     margin-top: -.2rem;
   }
 }
- @media only screen and (max-width:992px) {
+ @media all and (max-width:992px) {
   footer{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -1029,7 +1031,7 @@ body{
   }
  }
 
-@media only screen and (max-width:940px) {
+@media all and (max-width:940px) {
   .flexAppoint{
     margin-left: -20rem;
   }
@@ -1045,7 +1047,7 @@ body{
     width: 100%;
   }
 }
-@media only screen and (max-width:650px) {
+@media all and (max-width:650px) {
   .flexAppoint{
     margin-left: -50rem;
   }
@@ -1067,7 +1069,7 @@ body{
 .contactInvisile{
   visibility: hidden;
 }
-@media only screen and (max-width:580px) {
+@media all and (max-width:580px) {
   .sectionHeader{
    flex-direction: row;
    padding-left: 15rem;
@@ -1086,15 +1088,17 @@ body{
     width: 100%;
     height: 100%;
     margin-top: 2rem;
+    margin-left: -4rem;
   }
   .paintContainer1{
     display: grid;
     grid-template-columns: 1fr;
+    width: 15rem;
   }
   .btnMsg{border: none;
   background-color: white;}
   .btnMsg{
-    width: 20rem;
+    width: 15rem;
     border-radius: 0;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
@@ -1103,7 +1107,7 @@ body{
     border: none;
   }
   .secondPaintContainer{
-    width: 22.5rem;
+    width: 100%;
     border-radius: 0;
     margin-top: -1rem;
     border-bottom-left-radius: 2rem;
@@ -1116,7 +1120,19 @@ body{
   .introContainer p{
     width: 80%;
   }
-  .thirdPart{
-    padding-right: 2rem;
+  .eightPart .blogSlidesContainer .blogSlide1 .comment,  .eightPart .blogSlidesContainer .blogSlide2 .comment,  .eightPart .blogSlidesContainer .blogSlide3 .comment{
+    margin-left: 2rem;
+  }
+  footer{
+    margin-left: -2rem;
+  }
+}
+
+@media all and (max-width:400px) {
+  .eightPart .blogSlidesContainer .blogSlide1 .comment,  .eightPart .blogSlidesContainer .blogSlide2 .comment,  .eightPart .blogSlidesContainer .blogSlide3 .comment{
+    margin-left: 1rem;
+  }
+  footer{
+    margin-left: -2rem;
   }
 }
